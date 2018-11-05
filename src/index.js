@@ -1,24 +1,42 @@
-let human = {
-	'name': 'Jack',
-	'age': 25,
-	'hands': [
-		{side: 'left'},
-		{side: 'right'}
-	],
-	'2345': 'dfsdf',
-	run (speed) {
+let array = [546, 78, 8, 9, 89, 9, 90, 90, 90];
+let index;
+let element;
 
-	},
-	sit () {},
-	head: true
-};
+for(index = 0; index < array.length; index +=1) {
+	console.log(array[index]);
+}
 
-let property = 'hands';
+index = 0;
+while (index < array.length) {
+	console.log(array[index]);
+		index +=1;
+}
 
-let object = new Object();
-human[property] = 'John';
+index = array.length;
+while (index--) {
+	console.log(array[index]);
+}
 
-let array = [45, 67, 78, 7,89];
-console.log(human.hands.length);
+// let element;
+// index = 0;
+// while (element = array[index++]) {
+// 	console.log(element);
+// }
 
-console.log(human.run.length);
+index = -1;
+while (++index in array) {
+	console.log(array[index]);
+}
+
+let human = {age: 343, name: 'Jack'};
+
+for ( index in human ) {
+	console.log(human[index]);
+}
+
+// NEVER DO THIS !!!!!!!!!!!!!!!!!!!
+for (index in array) {
+	console.log(array[index]);
+}
+
+console.log('name' in array);
