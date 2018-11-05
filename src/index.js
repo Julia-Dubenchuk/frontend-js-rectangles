@@ -1,24 +1,24 @@
-let human = {
-	'name': 'Jack',
-	'age': 25,
-	'hands': [
-		{side: 'left'},
-		{side: 'right'}
-	],
-	'2345': 'dfsdf',
-	run (speed) {
+let arrayA = [1, 2, 3, 4];
+let arrayB = arrayA.concat();
 
-	},
-	sit () {},
-	head: true
-};
+arrayA.push(5);
+console.log(arrayB);
+arrayA.length = 0;
+console.log(arrayA);
 
-let property = 'hands';
 
-let object = new Object();
-human[property] = 'John';
+function sum (...args) {
+	console.log(args);
+}
 
-let array = [45, 67, 78, 7,89];
-console.log(human.hands.length);
+function sum () {
+	console.log(Array.from(arguments));
+}
 
-console.log(human.run.length);
+function sum () {
+	console.log(Array.prototype.slice.call(arguments));
+}
+
+arguments //array like object
+
+sum(35, 64, 57);
