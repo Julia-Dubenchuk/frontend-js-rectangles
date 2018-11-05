@@ -1,24 +1,24 @@
-let human = {
-	'name': 'Jack',
-	'age': 25,
-	'hands': [
-		{side: 'left'},
-		{side: 'right'}
-	],
-	'2345': 'dfsdf',
-	run (speed) {
+function areIntersected (rect1, rect2) {
+	// rect1;
+	// if (rect2.left <= rect1.left && rect2.left >= rect1.left) {
 
+	// }
+	return rect2.left >= 0 && rect2.left >= rect1.left;
+}
+
+export { areIntersected };
+
+console.log(
+	areIntersected({
+		left: 0,
+		top: 0,
+		width: 20,
+		height: 20
 	},
-	sit () {},
-	head: true
-};
-
-let property = 'hands';
-
-let object = new Object();
-human[property] = 'John';
-
-let array = [45, 67, 78, 7,89];
-console.log(human.hands.length);
-
-console.log(human.run.length);
+	{
+		left: 10,
+		top: 10,
+		width: 25,
+		height: 25
+	})
+);
