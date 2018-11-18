@@ -22,3 +22,6 @@ console.log(
 		height: 25
 	})
 );
+let numbers = [546, 67];
+numbers[100] = 6876;
+numbers.length
