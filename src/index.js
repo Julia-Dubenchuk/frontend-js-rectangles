@@ -1,14 +1,24 @@
 function areIntersected (rect1, rect2) {
-	if (rect2.left > 0) {
-		return rect2.width > (rect2.left - rect1.left);
-	} if (rect2.left <= 0) {
-		return rect2.width > (rect1.left - rect2.left);
-	} if (rect2.left === rect1.left) {
-		return (rect2.height > rect1.height) && (rect2.width > rect1.width);
-	}
+	// if (rect2.left > 0) {
+	// 	return rect2.width > (rect2.left - rect1.left);
+	// } else if (rect2.left <= 0) {
+	// 	return rect2.width > (rect1.left - rect2.left);
+	// } else if (rect2.left === rect1.left) {
+	// 	return (rect2.height > rect1.height) && (rect2.width > rect1.width);
+	// } else if (rect1.top < 0) {
+  //   return rect2.top < (rect1.top + rect1.height);
+  // }
+  if ((((rect1.left + rect1.width) >= rect2.left) || ((rect2.left + rect2.width) <= (rect1.left)))
+  && (((rect1.top + rect1.height) >= rect2.top) || ((rect2.height + rect2.top) <= (rect1.top + rect1.height)))) {
+    return true;
+  } else if (rect2.left === rect1.left) {
+    	return (rect2.height > rect1.height) && (rect2.width > rect1.width);
+    } else {
+      return false;
+    }
 }
 
-function filterVisible (rect, arrayRects) {
+function filterVisible (rect, arrayRects = []) {
 	return arrayRects.filter(function (objectRect) {
 		return areIntersected(rect, objectRect);
 	});
@@ -21,7 +31,7 @@ function filterVisible (rect, arrayRects) {
 
 console.log(areIntersected(
 	{
-		left: -10, top: -100,
+		left: 100, top: -10,
 		width: 15, height: 25
 	},
 	{
